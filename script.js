@@ -1,619 +1,523 @@
-var chessSection1 = document.createElement("div");
-chessSection1.style.height = '90px';
-chessSection1.style.width = '740px';
-chessSection1.style.display = 'flex';
-document.body.append(chessSection1);
-var chessSection10 = document.createElement("div");
-chessSection10.innerHTML = "<p>8</p>";
-chessSection10.style.height = '90px';
-chessSection10.style.width = '30px';
-chessSection10.style.border = '2px solid black';
-chessSection1.appendChild(chessSection10);
-var chessSection11 = document.createElement("div");
-chessSection11.innerHTML = "<h1>Л</h1>";
-chessSection11.style.height = '90px';
-chessSection11.style.width = '90px';
-chessSection11.style.border = '2px solid black';
-chessSection11.style.color = 'grey';
-chessSection1.appendChild(chessSection11);
-var chessSection12 = document.createElement("div");
-chessSection12.innerHTML = "<h1>К</h1>";
-chessSection12.style.height = '90px';
-chessSection12.style.width = '90px';
-chessSection12.style.border = '2px solid black';
-chessSection12.style.background = 'black';
-chessSection12.style.color = 'grey';
-chessSection1.appendChild(chessSection12);
-var chessSection13 = document.createElement("div");
-chessSection13.innerHTML = "<h1>С</h1>";
-chessSection13.style.height = '90px';
-chessSection13.style.width = '90px';
-chessSection13.style.border = '2px solid black';
-chessSection13.style.color = 'grey';
-chessSection1.appendChild(chessSection13);
-var chessSection14 = document.createElement("div");
-chessSection14.innerHTML = "<h1>Ф</h1>";
-chessSection14.style.height = '90px';
-chessSection14.style.width = '90px';
-chessSection14.style.border = '2px solid black';
-chessSection14.style.background = 'black';
-chessSection14.style.color = 'grey';
-chessSection1.appendChild(chessSection14);
-var chessSection15 = document.createElement("div");
-chessSection15.innerHTML = "<h1>К</h1>";
-chessSection15.style.height = '90px';
-chessSection15.style.width = '90px';
-chessSection15.style.border = '2px solid black';
-chessSection15.style.color = 'grey';
-chessSection1.appendChild(chessSection15);
-var chessSection16 = document.createElement("div");
-chessSection16.innerHTML = "<h1>С</h1>";
-chessSection16.style.height = '90px';
-chessSection16.style.width = '90px';
-chessSection16.style.border = '2px solid black';
-chessSection16.style.background = 'black';
-chessSection16.style.color = 'grey';
-chessSection1.appendChild(chessSection16);
-var chessSection17 = document.createElement("div");
-chessSection17.innerHTML = "<h1>К</h1>";
-chessSection17.style.height = '90px';
-chessSection17.style.width = '90px';
-chessSection17.style.border = '2px solid black';
-chessSection17.style.color = 'grey';
-chessSection1.appendChild(chessSection17);
-var chessSection18 = document.createElement("div");
-chessSection18.innerHTML = "<h1>Л</h1>";
-chessSection18.style.height = '90px';
-chessSection18.style.width = '90px';
-chessSection18.style.border = '2px solid black';
-chessSection18.style.background = 'black';
-chessSection18.style.color = 'grey';
-chessSection1.appendChild(chessSection18);
+const GAME_STATUS_STARTED = 'started';
+const GAME_STATUS_PAUSED = 'paused';
+const GAME_STATUS_STOPPED = 'stopped';
+const GAME_STATUS_DEFAULT = 'default';
 
-var chessSection2 = document.createElement("div");
-chessSection2.style.height = '90px';
-chessSection2.style.width = '740px';
-chessSection2.style.display = 'flex';
-document.body.append(chessSection2);
-var chessSection20 = document.createElement("div");
-chessSection20.innerHTML = "<p>7</p>";
-chessSection20.style.height = '90px';
-chessSection20.style.width = '30px';
-chessSection20.style.border = '2px solid black';
-chessSection2.appendChild(chessSection20);
-var chessSection21 = document.createElement("div");
-chessSection21.innerHTML = "<h1>П</h1>";
-chessSection21.style.height = '90px';
-chessSection21.style.width = '90px';
-chessSection21.style.border = '2px solid black';
-chessSection21.style.background = 'black';
-chessSection21.style.color = 'grey';
-chessSection2.appendChild(chessSection21);
-var chessSection22 = document.createElement("div");
-chessSection22.innerHTML = "<h1>П</h1>";
-chessSection22.style.height = '90px';
-chessSection22.style.width = '90px';
-chessSection22.style.border = '2px solid black';
-chessSection22.style.color = 'grey';
-chessSection2.appendChild(chessSection22);
-var chessSection23 = document.createElement("div");
-chessSection23.innerHTML = "<h1>П</h1>";
-chessSection23.style.height = '90px';
-chessSection23.style.width = '90px';
-chessSection23.style.border = '2px solid black';
-chessSection23.style.background = 'black';
-chessSection23.style.color = 'grey';
-chessSection2.appendChild(chessSection23);
-var chessSection24 = document.createElement("div");
-chessSection24.innerHTML = "<h1>П</h1>";
-chessSection24.style.height = '90px';
-chessSection24.style.width = '90px';
-chessSection24.style.border = '2px solid black';
-chessSection24.style.color = 'grey';
-chessSection2.appendChild(chessSection24);
-var chessSection25 = document.createElement("div");
-chessSection25.innerHTML = "<h1>П</h1>";
-chessSection25.style.height = '90px';
-chessSection25.style.width = '90px';
-chessSection25.style.border = '2px solid black';
-chessSection25.style.background = 'black';
-chessSection25.style.color = 'grey';
-chessSection2.appendChild(chessSection25);
-var chessSection26 = document.createElement("div");
-chessSection26.innerHTML = "<h1>П</h1>";
-chessSection26.style.height = '90px';
-chessSection26.style.width = '90px';
-chessSection26.style.border = '2px solid black';
-chessSection26.style.color = 'grey';
-chessSection2.appendChild(chessSection26);
-var chessSection27 = document.createElement("div");
-chessSection27.innerHTML = "<h1>П</h1>";
-chessSection27.style.height = '90px';
-chessSection27.style.width = '90px';
-chessSection27.style.border = '2px solid black';
-chessSection27.style.background = 'black';
-chessSection27.style.color = 'grey';
-chessSection2.appendChild(chessSection27);
-var chessSection28 = document.createElement("div");
-chessSection28.innerHTML = "<h1>П</h1>";
-chessSection28.style.height = '90px';
-chessSection28.style.width = '90px';
-chessSection28.style.border = '2px solid black';
-chessSection28.style.color = 'grey';
-chessSection2.appendChild(chessSection28);
+const SNAKE_DIRECTION_UP = 'up';
+const SNAKE_DIRECTION_DOWN = 'down';
+const SNAKE_DIRECTION_LEFT = 'left';
+const SNAKE_DIRECTION_RIGHT = 'right';
 
-var chessSection3 = document.createElement("div");
-chessSection3.style.height = '90px';
-chessSection3.style.width = '740px';
-chessSection3.style.display = 'flex';
-document.body.append(chessSection3);
-var chessSection30 = document.createElement("div");
-chessSection30.innerHTML = "<p>6</p>";
-chessSection30.style.height = '90px';
-chessSection30.style.width = '30px';
-chessSection30.style.border = '2px solid black';
-chessSection3.appendChild(chessSection30);
-var chessSection31 = document.createElement("div");
-chessSection31.innerHTML = "<p></p>";
-chessSection31.style.height = '90px';
-chessSection31.style.width = '90px';
-chessSection31.style.border = '2px solid black';
-chessSection3.appendChild(chessSection31);
-var chessSection32 = document.createElement("div");
-chessSection32.innerHTML = "<p></p>";
-chessSection32.style.height = '90px';
-chessSection32.style.width = '90px';
-chessSection32.style.border = '2px solid black';
-chessSection32.style.background = 'black';
-chessSection32.style.color = 'white';
-chessSection3.appendChild(chessSection32);
-var chessSection33 = document.createElement("div");
-chessSection33.innerHTML = "<p></p>";
-chessSection33.style.height = '90px';
-chessSection33.style.width = '90px';
-chessSection33.style.border = '2px solid black';
-chessSection3.appendChild(chessSection33);
-var chessSection34 = document.createElement("div");
-chessSection34.innerHTML = "<p></p>";
-chessSection34.style.height = '90px';
-chessSection34.style.width = '90px';
-chessSection34.style.border = '2px solid black';
-chessSection34.style.background = 'black';
-chessSection34.style.color = 'white';
-chessSection3.appendChild(chessSection34);
-var chessSection35 = document.createElement("div");
-chessSection35.innerHTML = "<p></p>";
-chessSection35.style.height = '90px';
-chessSection35.style.width = '90px';
-chessSection35.style.border = '2px solid black';
-chessSection3.appendChild(chessSection35);
-var chessSection36 = document.createElement("div");
-chessSection36.innerHTML = "<p></p>";
-chessSection36.style.height = '90px';
-chessSection36.style.width = '90px';
-chessSection36.style.border = '2px solid black';
-chessSection36.style.background = 'black';
-chessSection36.style.color = 'white';
-chessSection3.appendChild(chessSection36);
-var chessSection37 = document.createElement("div");
-chessSection37.innerHTML = "<p></p>";
-chessSection37.style.height = '90px';
-chessSection37.style.width = '90px';
-chessSection37.style.border = '2px solid black';
-chessSection3.appendChild(chessSection37);
-var chessSection38 = document.createElement("div");
-chessSection38.innerHTML = "<p></p>";
-chessSection38.style.height = '90px';
-chessSection38.style.width = '90px';
-chessSection38.style.border = '2px solid black';
-chessSection38.style.background = 'black';
-chessSection38.style.color = 'white';
-chessSection3.appendChild(chessSection38);
 
-var chessSection4 = document.createElement("div");
-chessSection4.style.height = '90px';
-chessSection4.style.width = '740px';
-chessSection4.style.display = 'flex';
-document.body.append(chessSection4);
-var chessSection40 = document.createElement("div");
-chessSection40.innerHTML = "<p>5</p>";
-chessSection40.style.height = '90px';
-chessSection40.style.width = '30px';
-chessSection40.style.border = '2px solid black';
-chessSection4.appendChild(chessSection40);
-var chessSection41 = document.createElement("div");
-chessSection41.innerHTML = "<p></p>";
-chessSection41.style.height = '90px';
-chessSection41.style.width = '90px';
-chessSection41.style.border = '2px solid black';
-chessSection41.style.background = 'black';
-chessSection41.style.color = 'white';
-chessSection4.appendChild(chessSection41);
-var chessSection42 = document.createElement("div");
-chessSection42.innerHTML = "<p></p>";
-chessSection42.style.height = '90px';
-chessSection42.style.width = '90px';
-chessSection42.style.border = '2px solid black';
-chessSection4.appendChild(chessSection42);
-var chessSection43 = document.createElement("div");
-chessSection43.innerHTML = "<p></p>";
-chessSection43.style.height = '90px';
-chessSection43.style.width = '90px';
-chessSection43.style.border = '2px solid black';
-chessSection43.style.background = 'black';
-chessSection43.style.color = 'white';
-chessSection4.appendChild(chessSection43);
-var chessSection44 = document.createElement("div");
-chessSection44.innerHTML = "<p></p>";
-chessSection44.style.height = '90px';
-chessSection44.style.width = '90px';
-chessSection44.style.border = '2px solid black';
-chessSection4.appendChild(chessSection44);
-var chessSection45 = document.createElement("div");
-chessSection45.innerHTML = "<p></p>";
-chessSection45.style.height = '90px';
-chessSection45.style.width = '90px';
-chessSection45.style.border = '2px solid black';
-chessSection45.style.background = 'black';
-chessSection45.style.color = 'white';
-chessSection4.appendChild(chessSection45);
-var chessSection46 = document.createElement("div");
-chessSection46.innerHTML = "<p></p>";
-chessSection46.style.height = '90px';
-chessSection46.style.width = '90px';
-chessSection46.style.border = '2px solid black';
-chessSection4.appendChild(chessSection46);
-var chessSection47 = document.createElement("div");
-chessSection47.innerHTML = "<p></p>";
-chessSection47.style.height = '90px';
-chessSection47.style.width = '90px';
-chessSection47.style.border = '2px solid black';
-chessSection47.style.background = 'black';
-chessSection47.style.color = 'white';
-chessSection4.appendChild(chessSection47);
-var chessSection48 = document.createElement("div");
-chessSection48.innerHTML = "<p></p>";
-chessSection48.style.height = '90px';
-chessSection48.style.width = '90px';
-chessSection48.style.border = '2px solid black';
-chessSection4.appendChild(chessSection48);
+/**
+ * Объект с настройками конфигурации игры
+ */
+const config = {
+    /**
+     * Размер поля.
+     */
+    size: 20
+};
 
-var chessSection5 = document.createElement("div");
-chessSection5.style.height = '90px';
-chessSection5.style.width = '740px';
-chessSection5.style.display = 'flex';
-document.body.append(chessSection5);
-var chessSection50 = document.createElement("div");
-chessSection50.innerHTML = "<p>4</p>";
-chessSection50.style.height = '90px';
-chessSection50.style.width = '30px';
-chessSection50.style.border = '2px solid black';
-chessSection5.appendChild(chessSection50);
-var chessSection51 = document.createElement("div");
-chessSection51.innerHTML = "<p></p>";
-chessSection51.style.height = '90px';
-chessSection51.style.width = '90px';
-chessSection51.style.border = '2px solid black';
-chessSection5.appendChild(chessSection51);
-var chessSection52 = document.createElement("div");
-chessSection52.innerHTML = "<p></p>";
-chessSection52.style.height = '90px';
-chessSection52.style.width = '90px';
-chessSection52.style.border = '2px solid black';
-chessSection52.style.background = 'black';
-chessSection52.style.color = 'white';
-chessSection5.appendChild(chessSection52);
-var chessSection53 = document.createElement("div");
-chessSection53.innerHTML = "<p></p>";
-chessSection53.style.height = '90px';
-chessSection53.style.width = '90px';
-chessSection53.style.border = '2px solid black';
-chessSection5.appendChild(chessSection53);
-var chessSection54 = document.createElement("div");
-chessSection54.innerHTML = "<p></p>";
-chessSection54.style.height = '90px';
-chessSection54.style.width = '90px';
-chessSection54.style.border = '2px solid black';
-chessSection54.style.background = 'black';
-chessSection54.style.color = 'white';
-chessSection5.appendChild(chessSection54);
-var chessSection55 = document.createElement("div");
-chessSection55.innerHTML = "<p></p>";
-chessSection55.style.height = '90px';
-chessSection55.style.width = '90px';
-chessSection55.style.border = '2px solid black';
-chessSection5.appendChild(chessSection55);
-var chessSection56 = document.createElement("div");
-chessSection56.innerHTML = "<p></p>";
-chessSection56.style.height = '90px';
-chessSection56.style.width = '90px';
-chessSection56.style.border = '2px solid black';
-chessSection56.style.background = 'black';
-chessSection56.style.color = 'white';
-chessSection5.appendChild(chessSection56);
-var chessSection57 = document.createElement("div");
-chessSection57.innerHTML = "<p></p>";
-chessSection57.style.height = '90px';
-chessSection57.style.width = '90px';
-chessSection57.style.border = '2px solid black';
-chessSection5.appendChild(chessSection57);
-var chessSection58 = document.createElement("div");
-chessSection58.innerHTML = "<p></p>";
-chessSection58.style.height = '90px';
-chessSection58.style.width = '90px';
-chessSection58.style.border = '2px solid black';
-chessSection58.style.background = 'black';
-chessSection58.style.color = 'white';
-chessSection5.appendChild(chessSection58);
+/**
+ * Основной объект игры.
+ */
+const game = {
 
-var chessSection6 = document.createElement("div");
-chessSection6.style.height = '90px';
-chessSection6.style.width = '740px';
-chessSection6.style.display = 'flex';
-document.body.append(chessSection6);
-var chessSection60 = document.createElement("div");
-chessSection60.innerHTML = "<p>3</p>";
-chessSection60.style.height = '90px';
-chessSection60.style.width = '30px';
-chessSection60.style.border = '2px solid black';
-chessSection6.appendChild(chessSection60);
-var chessSection61 = document.createElement("div");
-chessSection61.innerHTML = "<p></p>";
-chessSection61.style.height = '90px';
-chessSection61.style.width = '90px';
-chessSection61.style.border = '2px solid black';
-chessSection61.style.background = 'black';
-chessSection61.style.color = 'white';
-chessSection6.appendChild(chessSection61);
-var chessSection62 = document.createElement("div");
-chessSection62.innerHTML = "<p></p>";
-chessSection62.style.height = '90px';
-chessSection62.style.width = '90px';
-chessSection62.style.border = '2px solid black';
-chessSection6.appendChild(chessSection62);
-var chessSection63 = document.createElement("div");
-chessSection63.innerHTML = "<p></p>";
-chessSection63.style.height = '90px';
-chessSection63.style.width = '90px';
-chessSection63.style.border = '2px solid black';
-chessSection63.style.background = 'black';
-chessSection63.style.color = 'white';
-chessSection6.appendChild(chessSection63);
-var chessSection64 = document.createElement("div");
-chessSection64.innerHTML = "<p></p>";
-chessSection64.style.height = '90px';
-chessSection64.style.width = '90px';
-chessSection64.style.border = '2px solid black';
-chessSection6.appendChild(chessSection64);
-var chessSection65 = document.createElement("div");
-chessSection65.innerHTML = "<p></p>";
-chessSection65.style.height = '90px';
-chessSection65.style.width = '90px';
-chessSection65.style.border = '2px solid black';
-chessSection65.style.background = 'black';
-chessSection65.style.color = 'white';
-chessSection6.appendChild(chessSection65);
-var chessSection66 = document.createElement("div");
-chessSection66.innerHTML = "<p></p>";
-chessSection66.style.height = '90px';
-chessSection66.style.width = '90px';
-chessSection66.style.border = '2px solid black';
-chessSection6.appendChild(chessSection66);
-var chessSection67 = document.createElement("div");
-chessSection67.innerHTML = "<p></p>";
-chessSection67.style.height = '90px';
-chessSection67.style.width = '90px';
-chessSection67.style.border = '2px solid black';
-chessSection67.style.background = 'black';
-chessSection67.style.color = 'white';
-chessSection6.appendChild(chessSection67);
-var chessSection68 = document.createElement("div");
-chessSection68.innerHTML = "<p></p>";
-chessSection68.style.height = '90px';
-chessSection68.style.width = '90px';
-chessSection68.style.border = '2px solid black';
-chessSection6.appendChild(chessSection68);
+    score: 0,
 
-var chessSection7 = document.createElement("div");
-chessSection7.style.height = '90px';
-chessSection7.style.width = '740px';
-chessSection7.style.display = 'flex';
-document.body.append(chessSection7);
-var chessSection70 = document.createElement("div");
-chessSection70.innerHTML = "<p>2</p>";
-chessSection70.style.height = '90px';
-chessSection70.style.width = '30px';
-chessSection70.style.border = '2px solid black';
-chessSection7.appendChild(chessSection70);
-var chessSection71 = document.createElement("div");
-chessSection71.innerHTML = "<h1>П</h1>";
-chessSection71.style.height = '90px';
-chessSection71.style.width = '90px';
-chessSection71.style.border = '2px solid black';
-chessSection71.style.color = 'orange';
-chessSection7.appendChild(chessSection71);
-var chessSection72 = document.createElement("div");
-chessSection72.innerHTML = "<h1>П</h1>";
-chessSection72.style.height = '90px';
-chessSection72.style.width = '90px';
-chessSection72.style.border = '2px solid black';
-chessSection72.style.background = 'black';
-chessSection72.style.color = 'orange';
-chessSection7.appendChild(chessSection72);
-var chessSection73 = document.createElement("div");
-chessSection73.innerHTML = "<h1>П</h1>";
-chessSection73.style.height = '90px';
-chessSection73.style.width = '90px';
-chessSection73.style.border = '2px solid black';
-chessSection73.style.color = 'orange';
-chessSection7.appendChild(chessSection73);
-var chessSection74 = document.createElement("div");
-chessSection74.innerHTML = "<h1>П</h1>";
-chessSection74.style.height = '90px';
-chessSection74.style.width = '90px';
-chessSection74.style.border = '2px solid black';
-chessSection74.style.background = 'black';
-chessSection74.style.color = 'orange';
-chessSection7.appendChild(chessSection74);
-var chessSection75 = document.createElement("div");
-chessSection75.innerHTML = "<h1>П</h1>";
-chessSection75.style.height = '90px';
-chessSection75.style.width = '90px';
-chessSection75.style.border = '2px solid black';
-chessSection75.style.color = 'orange';
-chessSection7.appendChild(chessSection75);
-var chessSection76 = document.createElement("div");
-chessSection76.innerHTML = "<h1>П</h1>";
-chessSection76.style.height = '90px';
-chessSection76.style.width = '90px';
-chessSection76.style.border = '2px solid black';
-chessSection76.style.background = 'black';
-chessSection76.style.color = 'orange';
-chessSection7.appendChild(chessSection76);
-var chessSection77 = document.createElement("div");
-chessSection77.innerHTML = "<h1>П</h1>";
-chessSection77.style.height = '90px';
-chessSection77.style.width = '90px';
-chessSection77.style.border = '2px solid black';
-chessSection77.style.color = 'orange';
-chessSection7.appendChild(chessSection77);
-var chessSection78 = document.createElement("div");
-chessSection78.innerHTML = "<h1>П</h1>";
-chessSection78.style.height = '90px';
-chessSection78.style.width = '90px';
-chessSection78.style.border = '2px solid black';
-chessSection78.style.background = 'black';
-chessSection78.style.color = 'orange';
-chessSection7.appendChild(chessSection78);
+    /**
+     * Функция ищет HTML элемент контейнера игры на странице.
+     *
+     * @returns {HTMLElement} Возвращает HTML элемент.
+     */
+    getElement() {
+        return document.getElementById('game');
+    },
 
-var chessSection8 = document.createElement("div");
-chessSection8.style.height = '90px';
-chessSection8.style.width = '740px';
-chessSection8.style.display = 'flex';
-document.body.append(chessSection8);
-var chessSection80 = document.createElement("div");
-chessSection80.innerHTML = "<p>1</p>";
-chessSection80.style.height = '90px';
-chessSection80.style.width = '30px';
-chessSection80.style.border = '2px solid black';
-chessSection8.appendChild(chessSection80);
-var chessSection81 = document.createElement("div");
-chessSection81.innerHTML = "<h1>Л</h1>";
-chessSection81.style.height = '90px';
-chessSection81.style.width = '90px';
-chessSection81.style.border = '2px solid black';
-chessSection81.style.background = 'black';
-chessSection81.style.color = 'orange';
-chessSection8.appendChild(chessSection81);
-var chessSection82 = document.createElement("div");
-chessSection82.innerHTML = "<h1>К</h1>";
-chessSection82.style.height = '90px';
-chessSection82.style.width = '90px';
-chessSection82.style.border = '2px solid black';
-chessSection82.style.color = 'orange';
-chessSection8.appendChild(chessSection82);
-var chessSection83 = document.createElement("div");
-chessSection83.innerHTML = "<h1>С</h1>";
-chessSection83.style.height = '90px';
-chessSection83.style.width = '90px';
-chessSection83.style.border = '2px solid black';
-chessSection83.style.background = 'black';
-chessSection83.style.color = 'orange';
-chessSection8.appendChild(chessSection83);
-var chessSection84 = document.createElement("div");
-chessSection84.innerHTML = "<h1>Ф</h1>";
-chessSection84.style.height = '90px';
-chessSection84.style.width = '90px';
-chessSection84.style.border = '2px solid black';
-chessSection84.style.color = 'orange';
-chessSection8.appendChild(chessSection84);
-var chessSection85 = document.createElement("div");
-chessSection85.innerHTML = "<h1>К</h1>";
-chessSection85.style.height = '90px';
-chessSection85.style.width = '90px';
-chessSection85.style.border = '2px solid black';
-chessSection85.style.background = 'black';
-chessSection85.style.color = 'orange';
-chessSection8.appendChild(chessSection85);
-var chessSection86 = document.createElement("div");
-chessSection86.innerHTML = "<h1>С</h1>";
-chessSection86.style.height = '90px';
-chessSection86.style.width = '90px';
-chessSection86.style.border = '2px solid black';
-chessSection86.style.color = 'orange';
-chessSection8.appendChild(chessSection86);
-var chessSection87 = document.createElement("div");
-chessSection87.innerHTML = "<h1>К</h1>";
-chessSection87.style.height = '90px';
-chessSection87.style.width = '90px';
-chessSection87.style.border = '2px solid black';
-chessSection87.style.background = 'black';
-chessSection87.style.color = 'orange';
-chessSection8.appendChild(chessSection87);
-var chessSection88 = document.createElement("div");
-chessSection88.innerHTML = "<h1>Л</h1>";
-chessSection88.style.height = '90px';
-chessSection88.style.width = '90px';
-chessSection88.style.border = '2px solid black';
-chessSection88.style.color = 'orange';
-chessSection8.appendChild(chessSection88);
+    getScoreValueElement() {
+        return document.getElementById('score-value');
+    },
 
-var chessSection9 = document.createElement("div");
-chessSection9.style.height = '30px';
-chessSection9.style.width = '740px';
-chessSection9.style.display = 'flex';
-document.body.append(chessSection9);
-var chessSection90 = document.createElement("div");
-chessSection90.innerHTML = "<p></p>";
-chessSection90.style.height = '30px';
-chessSection90.style.width = '28px';
-chessSection90.style.border = '2px solid black';
-chessSection9.appendChild(chessSection90);
-var chessSection91 = document.createElement("div");
-chessSection91.innerHTML = "<p>A</p>";
-chessSection91.style.height = '30px';
-chessSection91.style.width = '85px';
-chessSection91.style.border = '2px solid black';
-chessSection9.appendChild(chessSection91);
-var chessSection92 = document.createElement("div");
-chessSection92.innerHTML = "<p>B</p>";
-chessSection92.style.height = '30px';
-chessSection92.style.width = '85px';
-chessSection92.style.border = '2px solid black';
-chessSection9.appendChild(chessSection92);
-var chessSection93 = document.createElement("div");
-chessSection93.innerHTML = "<p>C</p>";
-chessSection93.style.height = '30px';
-chessSection93.style.width = '85px';
-chessSection93.style.border = '2px solid black';
-chessSection9.appendChild(chessSection93);
-var chessSection94 = document.createElement("div");
-chessSection94.innerHTML = "<p>D</p>";
-chessSection94.style.height = '30px';
-chessSection94.style.width = '85px';
-chessSection94.style.border = '2px solid black';
-chessSection9.appendChild(chessSection94);
-var chessSection95 = document.createElement("div");
-chessSection95.innerHTML = "<p>E</p>";
-chessSection95.style.height = '30px';
-chessSection95.style.width = '85px';
-chessSection95.style.border = '2px solid black';
-chessSection9.appendChild(chessSection95);
-var chessSection96 = document.createElement("div");
-chessSection96.innerHTML = "<p>F</p>";
-chessSection96.style.height = '30px';
-chessSection96.style.width = '85px';
-chessSection96.style.border = '2px solid black';
-chessSection9.appendChild(chessSection96);
-var chessSection97 = document.createElement("div");
-chessSection97.innerHTML = "<p>G</p>";
-chessSection97.style.height = '30px';
-chessSection97.style.width = '85px';
-chessSection97.style.border = '2px solid black';
-chessSection9.appendChild(chessSection97);
-var chessSection98 = document.createElement("div");
-chessSection98.innerHTML = "<p>H</p>";
-chessSection98.style.height = '30px';
-chessSection98.style.width = '85px';
-chessSection98.style.border = '2px solid black';
-chessSection9.appendChild(chessSection98);
+    /**
+     * Функция выполняет старт игры.
+     */
+    start() {
+        game.setGameStatus(GAME_STATUS_STARTED);
+
+        // 
+
+        // установить начальные координаты змейки snake.seed()
+        // установить начальные координаты еды food.seed()
+
+        board.render();
+        snake.render();
+        food.render();
+    },
+
+    /**
+     * Функция выполняет паузу игры.
+     */
+    pause() {
+        game.setGameStatus(GAME_STATUS_PAUSED);
+
+        /* добавить сюда код */
+    },
+
+    /**
+     * Функция останавливает игру.
+     */
+    stop() {
+        game.setGameStatus(GAME_STATUS_STOPPED);
+
+        // newTotalScore.innerHTML = "Игра окончена";
+        // score.appendChild(newTotalScore);
+
+        /* добавить сюда код */
+
+        // alert(game.score);
+
+        alert('Игра окончена. Количество очков: ' + game.score);
+
+        // очищаем массив змейки snake.clean()
+
+
+        // очищаем массив еды food.clean()
+        // snake.clean();
+
+        // очищаем доску board.clean()
+        board.clean();
+
+        game.setGameStatus(GAME_STATUS_DEFAULT);
+
+        game.score = 0;
+        const scoreValueElement = game.getScoreValueElement();
+        scoreValueElement.innerHTML = game.score;
+
+        snake.parts = [{
+                top: 0,
+                left: 0
+            },
+            {
+                top: 0,
+                left: 1
+            },
+            {
+                top: 0,
+                left: 2
+            },
+        ]
+
+    },
+    
+
+    /**
+     * Функция выполняет передвижение змейки по полю.
+     *
+     * @param event {KeyboardEvent} Событие нажатия на клавишу.
+     */
+    move(event) {
+        let direction = null;
+
+        /* смотрим на код клавишы и
+         * устанавливаем соответсвующее направление движения */
+        switch (event.keyCode) {
+            case 38:
+                direction = SNAKE_DIRECTION_UP;
+                break;
+            case 40:
+                direction = SNAKE_DIRECTION_DOWN;
+                break;
+            case 37:
+                direction = SNAKE_DIRECTION_LEFT;
+                break;
+            case 39:
+                direction = SNAKE_DIRECTION_RIGHT;
+                break;
+            default:
+                return;
+        }
+
+        /* устанавливаем позицию для змейки
+         * и запрашиваем координаты следующей позиции */
+        snake.setDirection(direction);
+        const nextPosition = snake.getNextPosition();
+
+        const foundSnake = snake.foundPosition(nextPosition);
+
+        if (foundSnake !== -1) {
+            game.stop();
+            // stop;
+
+            return;
+        };
+
+        /* проверяем совпадает ли следующая позиция с какой-нибудь едой */
+        const foundFood = food.foundPosition(nextPosition);
+
+        /* если найден индекс еды (то есть позиция совпадает) */
+        if (foundFood !== -1) {
+            /* устанавливаем следующую позицию змейки с вторым параметром "не удалять хвост змейки",
+             * змейка съев еду вырастает на одну клетку */
+            snake.setPosition(nextPosition, false);
+
+            /* удаляем еду с поля */
+            food.removeItem(foundFood);
+
+            /* генерируем новую еду на поле */
+            food.generateItem();
+
+            /* перерендериваем еду */
+            food.render();
+
+            //game.increaseScore();
+
+            game.score += 1;
+            const scoreValueElement = game.getScoreValueElement();
+            scoreValueElement.innerHTML = game.score;
+
+        } else {
+            /* если индекс не найден, то просто устанавливаем новую координату для змейки */
+            snake.setPosition(nextPosition);
+        }
+
+        /* перерендериваем змейку */
+        snake.render();
+    },
+
+    /**
+     * Функция устанавливает текущий статус игры,
+     * раскрашивая контейнер игры в нужный цвет.
+     *
+     * @param status {GAME_STATUS_STARTED | GAME_STATUS_PAUSED | GAME_STATUS_STOPPED} Строка представляющая статус.
+     */
+    setGameStatus(status) {
+        const element = game.getElement();
+
+        // обратить внимание, как сделать красивее
+        element.classList.remove(GAME_STATUS_STARTED, GAME_STATUS_PAUSED, GAME_STATUS_STOPPED);
+        element.classList.add(status);
+    }
+
+};
+
+
+
+
+/**
+ * Объект, представляющий поле, где ползает змейка.
+ */
+const board = {
+
+    /**
+     * Функция ищет HTML элемент поля на странице.
+     *
+     * @returns {HTMLElement} Возвращает HTML элемент.
+     */
+    getElement() {
+        return document.getElementById('board');
+    },
+
+    /**
+     * Функция отрисовывает поле с клетками для игры.
+     */
+    render() {
+        const board = this.getElement();
+
+        /* рисуем на странице 20*20 клеток */
+        for (let i = 0; i < config.size ** 2; i++) {
+            const cell = document.createElement('div');
+            cell.classList.add('cell');
+
+            /* высчитываем и записываем в data атрибуты
+             * координаты от верхней и левой границы */
+            cell.dataset.top = Math.trunc(i / config.size);
+            cell.dataset.left = i % config.size;
+
+            board.appendChild(cell);
+        }
+    },
+
+    clean() {
+        const cleaner = document.getElementById('board');
+        cleaner.innerHTML = "";
+    }
+};
+
+/**
+ * Объект, представляющий клетку на поле.
+ */
+const cells = {
+
+    /**
+     * Функция ищет HTML элементы клеток на странице.
+     *
+     * @returns { HTMLCollectionOf.<Element>} Возвращает набор HTML элементов.
+     */
+    getElements() {
+        return document.getElementsByClassName('cell');
+    },
+
+    /**
+     * Функция задает класс для клетки по заданным координатам.
+     *
+     * @param coordinates {Array.<{top: number, left: number}>} Массив координат клеток для изменения.
+     * @param className {string} Название класса.
+     */
+    renderItems(coordinates, className) {
+        const cells = this.getElements();
+
+        /* для всех клеток на странице удаляем переданный класс */
+        for (let cell of cells) {
+            cell.classList.remove(className);
+        }
+
+        /* для заданных координат ищем клетку и добавляем класс */
+        for (let coordinate of coordinates) {
+            const cell = document.querySelector(`.cell[data-top="${coordinate.top}"][data-left="${coordinate.left}"]`);
+            cell.classList.add(className);
+        }
+    }
+};
+
+/**
+ * Объект, представляющий змейку.
+ */
+const snake = {
+
+    /**
+     * Текущее направление движение змейки.
+     * По умолчанию: направо, потому змейка при старте занимает первые три клетки.
+     */
+    direction: SNAKE_DIRECTION_RIGHT,
+
+    /**
+     * Содержит массив объектов с координатами частей тела змейки.
+     * По умолчанию: первые три клетки.
+     *
+     * NOTE: обратить внимание, как сделать красивее.
+     * Поменять порядок координат, сейчас первый элемент массива означает хвост.
+     */
+    parts: [{
+            top: 0,
+            left: 0
+        },
+        {
+            top: 0,
+            left: 1
+        },
+        {
+            top: 0,
+            left: 2
+        },
+    ],
+
+    /**
+     * Функция устанавливает направление движения.
+     *
+     * @param direction {'up' | 'down' | 'left' | 'right'} Направление движения змейки.
+     */
+    setDirection(direction) {
+        /* проверка не пытается ли пользователь пойти в противоположном направлении,
+         * например, змейка ползет вправо, а пользователь нажал стрелку влево */
+        /* обратить внимание, как сделать красивее и сократить условие */
+        if (this.direction === SNAKE_DIRECTION_UP && direction === SNAKE_DIRECTION_DOWN ||
+            this.direction === SNAKE_DIRECTION_DOWN && direction === SNAKE_DIRECTION_UP ||
+            this.direction === SNAKE_DIRECTION_LEFT && direction === SNAKE_DIRECTION_RIGHT ||
+            this.direction === SNAKE_DIRECTION_RIGHT && direction === SNAKE_DIRECTION_LEFT) {
+            return;
+        }
+
+        this.direction = direction;
+    },
+
+
+
+
+
+    foundPosition(snakePosition) {
+        const comparerFunction = function (item) {
+            return item.top === snakePosition.top && item.left === snakePosition.left;
+        };
+
+        /* здесь происходит вызов функции comparerFunction для каждого элемента в массиве,
+         * если функция вернет true, то для этого элемента будет возвращен его индекс,
+         * если функция ни разу не вернет true, то результатом будет -1 */
+        return this.parts.findIndex(comparerFunction);
+    },
+
+
+
+    /**
+     * Функция считает следующую позицию головы змейки,
+     * в зависимости от текущего направления.
+     *
+     * @returns {{top: number, left: number}} Возвращает объект с координатами.
+     */
+    getNextPosition() {
+        /* получаем позицию головы змейки */
+        const position = {
+            ...this.parts[this.parts.length - 1]
+        };
+
+        /* в зависимости от текущего положения
+         * высчитываем значение от верхней и левой границы */
+        switch (this.direction) {
+            case SNAKE_DIRECTION_UP:
+                position.top -= 1;
+                break;
+            case SNAKE_DIRECTION_DOWN:
+                position.top += 1;
+                break;
+            case SNAKE_DIRECTION_LEFT:
+                position.left -= 1;
+                break;
+            case SNAKE_DIRECTION_RIGHT:
+                position.left += 1;
+                break;
+        }
+
+        /* если змейка выходит за верхний или нижний край поля,
+         * то изменяем координаты на противоположную сторону,
+         * чтобы змейка выходя за границы возвращалась обратно на поле */
+        if (position.top === -1) {
+            position.top = config.size - 1;
+        } else if (position.top > config.size - 1) {
+            position.top = 0;
+        }
+
+        /* если змейка выходит за левый или правый край поля,
+         * то изменяем координаты на противоположную сторону,
+         * чтобы змейка выходя за границы возвращалась обратно на поле */
+        if (position.left === -1) {
+            position.left = config.size - 1;
+        } else if (position.left > config.size - 1) {
+            position.left = 0;
+        }
+
+        return position;
+    },
+
+    /**
+     * Функция устанавливает позицию для змейки.
+     *
+     * @param position {{top: number, left: number}} Координаты новой позиции.
+     * @param shift Флаг, указывающий, нужно ли отрезать хвост для змейки.
+     */
+    setPosition(position, shift = true) {
+        /* проверяем флаг, указывающий, нужно ли отрезать хвост для змейки,
+         * если флаг положительный, то отрезаем хвост змейки (первый элемент в массиве),
+         * чтобы длина змейки не изменилась,
+         * если флаг будет отрицательным, то при установки позиции, мы не отрезаем хвост,
+         * а значит увеличиваем змейку на одну клетку, это будет означать, что она съела еду */
+        if (shift) {
+            this.parts.shift();
+        }
+
+        /* добавляем новые координаты в конец массива (голова змейки) */
+        this.parts.push(position);
+    },
+
+    /**
+     * Функция отрисовывает змейку на поле.
+     */
+    render() {
+        cells.renderItems(this.parts, 'snake');
+    }
+};
+
+/**
+ * Объект, представляющий еду для змейки.
+ */
+const food = {
+
+    /**
+     * Содержит массив объектов с координатами еды на поле.
+     */
+    items: [{
+        top: 5,
+        left: 5
+    }],
+
+    /**
+     * Функция выполняет поиск переданных координат змейки в массиве с едой.
+     *
+     * @param snakePosition {{top: number, left: number}} Позиция головы змейки.
+     *
+     * @returns {number} Возвращает индекс найденного совпадения из массива с едой,
+     * если ничего не найдено, то -1.
+     */
+    foundPosition(snakePosition) {
+        const comparerFunction = function (item) {
+            return item.top === snakePosition.top && item.left === snakePosition.left;
+        };
+
+        /* здесь происходит вызов функции comparerFunction для каждого элемента в массиве,
+         * если функция вернет true, то для этого элемента будет возвращен его индекс,
+         * если функция ни разу не вернет true, то результатом будет -1 */
+        return this.items.findIndex(comparerFunction);
+    },
+
+    /**
+     * Функция удаляет один элемент по индексу из массива с едой.
+     *
+     * @param foundPosition Индекс найденного элемента.
+     */
+    removeItem(foundPosition) {
+        this.items.splice(foundPosition, 1);
+    },
+
+    /**
+     * Функция генерирует объект с координатами новой еды.
+     */
+    generateItem() {
+        const newItem = {
+            top: getRandomNumber(0, config.size - 1),
+            left: getRandomNumber(0, config.size - 1)
+        };
+
+        // добавить проверку нет ли у нас такого элемента
+
+        this.items.push(newItem);
+    },
+
+    /**
+     * Функция отрисовывает еду на поле.
+     */
+    render() {
+        cells.renderItems(this.items, 'food');
+    }
+};
+
+/**
+ * Функция, которая выполняет инициализацию игры.
+ */
+function init() {
+    /* получаем кнопки */
+    const startButton = document.getElementById('button-start');
+    const pauseButton = document.getElementById('button-pause');
+    const stopButton = document.getElementById('button-stop');
+
+    /* добавляем обработчики клика на кнопки */
+    startButton.addEventListener('click', game.start);
+    pauseButton.addEventListener('click', game.pause);
+    stopButton.addEventListener('click', game.stop);
+
+    /* добавляем обработчик при нажатии на любую кнопку на клавиатуре,
+     * далее в методе мы будем проверять нужную нам клавишу */
+    window.addEventListener('keydown', game.move);
+}
+
+/**
+ * Функция, генерирующая случайные числа.
+ *
+ * @param min {number} Нижняя граница генерируемого числа.
+ * @param max {number} Верхняя граница генерируемого числа.
+ *
+ * @returns {number} Возвращает случайное число.
+ */
+function getRandomNumber(min, max) {
+    return Math.trunc(Math.random() * (max - min) + min);
+}
+
+window.addEventListener('load', init);
