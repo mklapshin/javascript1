@@ -1,119 +1,46 @@
-html,
-body {
-    font-family: 'Raleway', sans-serif;
-    height: 100%;
-    margin: 0;
+.container {
+    margin: 0 auto;
+    width: 1200px;
 }
 
-.game {
+.header {
     display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    height: 100%;
+    flex-direction: row;
+    margin-bottom: 10px;
+
 }
 
-.score {
-    font-size: 50px;
-    color: rgb(200, 200, 200);
+.cart-button {
+    margin-left: auto;
 }
 
-.game.started .score {
-    color: rgb(82, 205, 50);
+.goods-list {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-.game.paused .score {
-    color: rgb(233, 158, 6);
+.goods-item {
+    border: 1px solid wheat;
+    width: 150px;
+    box-sizing: border-box;
+    padding: 0px 20px;
+    margin: 10px 10px;
 }
 
-.game.stopped .score {
-    color: rgb(233, 6, 6);
+.basket-goods {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10px 0 0 0;
 }
 
-.board {
-    display: grid;
-    grid-template-rows: repeat(20, 1fr);
-    grid-template-columns: repeat(20, 1fr);
-    height: 600px;
-    width: 600px;
-    border: rgb(200, 200, 200) 1px solid;
+.basket-header {
+    text-align: center;
 }
 
-.board .cell {
-    border: rgb(247 247 247) 1px solid;
-}
-
-.board .cell.snake {
-    background-color: rgb(40, 98, 22);
-}
-
-.board .cell.food {
-    background-color: rgb(98, 22, 22);
-}
-
-.game.started .board {
-    border-color: rgb(82, 205, 50);
-}
-
-.game.paused .board {
-    border-color: rgb(233, 158, 6);
-}
-
-.game.stopped .board {
-    border-color: rgb(233, 6, 6);
-}
-
-.buttons button {
-    background-color: transparent;
-    margin: 10px;
-    line-height: 31px;
-    text-transform: uppercase;
-    cursor: pointer;
-    border-radius: 5px;
-    padding: 0 15px;
-    border: rgb(200, 200, 200) 1px solid;
-}
-
-.buttons button.start {
-    border-color: rgb(82, 205, 50);
-    color: rgb(82, 205, 50);
-}
-
-.buttons button.start:hover {
-    border-color: rgba(82, 205, 50, 0.5);
-    color: rgba(82, 205, 50, 0.5);
-}
-
-.buttons button.start:active {
-    border-color: rgba(82, 205, 50, 0.8);
-    color: rgba(82, 205, 50, 0.8);
-}
-
-.buttons button.pause {
-    border-color: rgb(233, 158, 6);
-    color: rgb(233, 158, 6);
-}
-
-.buttons button.pause:hover {
-    border-color: rgba(233, 158, 6, 0.5);
-    color: rgba(233, 158, 6, 0.5);
-}
-
-.buttons button.pause:active {
-    border-color: rgba(233, 158, 6, 0.8);
-    color: rgba(233, 158, 6, 0.8);
-}
-
-.buttons button.stop {
-    border-color: rgb(233, 6, 6);
-    color: rgb(233, 6, 6);
-}
-
-.buttons button.stop:hover {
-    border-color: rgba(233, 6, 6, 0.5);
-    color: rgba(233, 6, 6, 0.5);
-}
-
-.buttons button.stop:active {
-    border-color: rgba(233, 6, 6, 0.8);
-    color: rgba(233, 6, 6, 0.8);
+.basket-wrapper {
+    margin: 60px 0 0 0;
 }
